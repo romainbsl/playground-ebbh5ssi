@@ -1,4 +1,6 @@
-title: Custom Template
+title: Ktor as a backend Application
 plan:
-- title: Welcome
-  statement: markdowns/welcome.md
+  - title: A Ktor Tour
+    statement: markdowns/ktor.md
+  - title: Under the hood
+    statement: markdowns/further.md
