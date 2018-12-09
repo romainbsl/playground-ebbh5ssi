@@ -4,15 +4,47 @@ In this part we will describe how *Ktor* acts to run an asynchronous application
 
 ## Application Server
 
-A *Ktor* server is a Server Engine (Tomcat, Jetty, Netty ou Coroutine I/O) listening on a port. 
+A *Ktor* server is a Server Engine (Tomcat, Jetty, Netty or Coroutine I/O) listening on a port. 
 It is composed by modules, that are themselves composed of features (e.g. routing, sessions, logging). 
 
 When a request (HTTP / WebSocket) step into the *Ktor* server its serialized into an `ApplicationCall` that contains 
-the context (Request / Response / Environment). 
-Afterward, this `ApplicationCall` is transmitted and manipulated through a Pipeline.
+the context (Request / Response / Environment / Attributes). Afterward, this `ApplicationCall` is transmitted and 
+manipulated through a [Pipeline][pipeline].
 
 ##  Lifecycle
 
+A [Pipeline][pipeline] is a asynchronous chain of code blocks or functions, that is confugre by the modules and features 
+loaded at the application startup. It's composed of phases and interceptors, that are executed in a specific and predefined order.
+The application is a [Pipeline][pipeline] itself, that will handle incoming request through a specific path, established at the server loading. 
+
+For example, in the case of an HTTP call, the application's [Pipeline][pipeline] (also called ApplicationCallPipeline), 
+will execute multiple phases, like treating the request, or even send the HTTP response.
+
+	PipelineContext generally contains a `ApplicationCall` that is composed of the rquest information (Request / Response / Environment, Attributes). 
+	When using routes, every node has its own ApplicationCallPipeline instance. That means that every route will execute its own Pipeline.
+
 ##  Modules
 
+**Ktor** modules are extension functions, that take for receiver the Application. They are the configuration of the Application.  
+So, we can configure the server, with its Engine, its listening port, or even install specific features for each modules 
+(routing, session, logging...).
+
 ##  Features
+
+Features are singletons that extend the application capabilities, like:
+
+- Routing
+
+Defining the HTTP routes that will handle incoming requests.
+
+- Sessions
+
+Keeping a link, or information that identify the client/caller, giving the ability to handle request with a contexte. 
+For example, limiting the data access for some specific users.
+
+- WebSockets
+
+WebSockets support for **Ktor**, that goes beyond the 'one-shot' HTTP calls, and aims to keep the client and server linked, 
+allowing the server to send notification to the client. 
+
+[pipeline]: http://
