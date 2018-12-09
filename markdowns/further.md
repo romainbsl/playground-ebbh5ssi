@@ -32,7 +32,7 @@ will execute multiple phases, like treating the request, or even send the HTTP r
 So, we can configure the server, with its Engine, its listening port, or even install specific features for each modules 
 (routing, session, logging...).
 
-### Using modules
+> Here is an example of how to use modules
 
 ```kotlin
 fun main(args: Array<String>) {
