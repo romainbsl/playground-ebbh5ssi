@@ -32,6 +32,40 @@ will execute multiple phases, like treating the request, or even send the HTTP r
 So, we can configure the server, with its Engine, its listening port, or even install specific features for each modules 
 (routing, session, logging...).
 
+### Using modules
+
+```kotlin
+fun main(args: Array<String>) {
+    val server = embeddedServer(Netty, port = 8080) {
+        landingModule()
+        loginModule()
+    }
+    server.start(wait = true)
+}
+
+/**
+ * Module that handle the home page of the app
+ */
+fun Application.landingModule() {
+    routing {
+        get("/") {
+            call.respondText("Hello Visitor!")
+        }
+    }
+}
+
+/**
+ * Module that handle the login of the app
+ */
+fun Application.loginModule() {
+    routing {
+        get("/login") {
+            call.respondText("Please Login!")
+        }
+    }
+}
+```
+
 ##  [Features][]
 
 Features are singletons that extend the application capabilities, like:
