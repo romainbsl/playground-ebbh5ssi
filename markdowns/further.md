@@ -1,6 +1,6 @@
-In this part we will describe how *Ktor* acts to run an asynchronous application server.
+In this part we will describe how **Ktor** acts to run an asynchronous application server.
 
-> Reminder: For this overview, we will focus on the server side of *Ktor*. 
+> Reminder: For this overview, we will focus on the server side of **Ktor**. 
 
 ## Application Server
 
