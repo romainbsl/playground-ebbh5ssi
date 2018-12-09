@@ -2,5 +2,5 @@ title: Ktor as a backend Application
 plan:
   - title: A Ktor Tour
     statement: markdowns/ktor.md
-  - title: Under the hood
-    statement: markdowns/further.md
+#  - title: Under the hood
+#    statement: markdowns/further.md
