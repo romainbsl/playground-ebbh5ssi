@@ -24,8 +24,7 @@ The application is a [Pipeline][] itself, that will handle incoming request thro
 For example, in the case of an HTTP call, the application's [Pipeline][] (also called ApplicationCallPipeline), 
 will execute multiple phases, like treating the request, or even send the HTTP response.
 
-	PipelineContext generally contains a `ApplicationCall` that is composed of the rquest information (Request / Response / Environment, Attributes). 
-	When using routes, every node has its own ApplicationCallPipeline instance. That means that every route will execute its own Pipeline.
+	PipelineContext generally contains a `ApplicationCall` that is composed of the rquest information (Request / Response / Environment, Attributes). When using routes, every node has its own ApplicationCallPipeline instance. That means that every route will execute its own Pipeline.
 
 ##  [Modules][]
 
