@@ -23,9 +23,9 @@ fun main(args: Array<String>) { // (1)
 }
 ```
 
-> (1): Declare the main module of the app 
-> (2): Define the server with its Engine (e.g. Netty) and its listening port (8080) 
-> (3): Declare a routing feature that allow the app to handle HTTP requests
-> (4): Define a path that will make the url http://127.0.0.1:8080/ callable
-> (5): Implement of the Pipeline that will treat the HTTP call on http://127.0.0.1:8080/. This will send the text "Hello World!"
-> (6): Boot up the server
+- (1): Declare the main module of the app 
+- (2): Define the server with its Engine (e.g. Netty) and its listening port (8080) 
+- (3): Declare a routing feature that allow the app to handle HTTP requests
+- (4): Define a path that will make the url http://127.0.0.1:8080/ callable
+- (5): Implement of the Pipeline that will treat the HTTP call on http://127.0.0.1:8080/. This will send the text "Hello World!"
+- (6): Boot up the server
