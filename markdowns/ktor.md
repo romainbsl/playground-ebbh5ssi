@@ -46,9 +46,9 @@ manipulated through a [Pipeline][].
 ##  Lifecycle
 
 When a **Ktor** server starts, it waits for connections on a specific port. To handle connections and furthermore, 
-**Ktor** works with [Pipelines][], they are everywhere and are what's make **Ktor** asynchronous.  
+**Ktor** works with [Pipelines][Pipeline], they are everywhere and are what's make **Ktor** asynchronous.  
  
-A [Pipeline][] is a asynchronous chain of code blocks or functions that run asynchronous computation, 
+A [Pipeline][] is am asynchronous chain of code blocks or functions that run asynchronous computation, 
 with the implementation of coroutines. A [Pipeline][] is configured by the modules and features 
 loaded at the application startup. It's composed of phases and interceptors, that are executed in a specific and predefined order.
 The application is a [Pipeline][] itself, that will handle incoming request through a specific path, established at the server loading. 
