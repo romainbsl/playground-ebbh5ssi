@@ -30,7 +30,7 @@ fun main(args: Array<String>) { // (1)
 - (5) : Implement the Pipeline that will treat the HTTP call on http://127.0.0.1:8080/. This will send the text "Hello World!"
 - (6) : Boot up the server
 
-# Under th hood
+# Under the hood
 
 In this part we will describe how **Ktor** acts to run an asynchronous application server.
 
